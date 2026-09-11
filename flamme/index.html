@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Page contact</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Contactez-nous</h1>
+    </header>
+
+    <nav aria-label="Navigation des formulaires">
+        <a href="#" id="postuler-link" class="active" aria-current="page"
+            aria-label="Formulaire de candidature">Postuler</a>
+        <a href="#" id="commande-link" aria-label="Formulaire de réclamation de commande">Un problème avec votre
+            commande ?</a>
+    </nav>
+
+    <!-- Conteneur des formulaires -->
+    <main class="form-container" id="main-content">
+        <!-- Formulaire Postuler -->
+        <form id="postuler-form">
+            <fieldset>
+                <legend>Postuler</legend>
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" name="nom" required />
+
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" name="prenom" required />
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+
+                <label for="confirm_email">Confirmation de l'email</label>
+                <input type="email" id="confirm_email" name="confirm_email" aria-describedby="email-error" required />
+                <div id="email-error" class="error-message hidden">Les emails ne correspondent pas.</div>
+
+                <label for="adresse">Adresse </label>
+                <input type="text" id="adresse" name="adresse" />
+
+                <label for="telephone">Numéro de téléphone</label>
+                <input type="tel" id="telephone" name="telephone" required maxlength="10" pattern="[0-9]{10}"
+                    aria-describedby="tel-error" />
+                <div id="tel-error" class="error-message hidden">Le numéro doit comporter exactement 10 chiffres.</div>
+
+                <label for="cv">CV</label>
+                <input type="file" id="cv" name="cv" required accept=".pdf,.doc,.docx" />
+
+                <label for="motivation">Lettre de motivation</label>
+                <textarea id="motivation" name="motivation" rows="5" maxlength="3000"
+                    aria-describedby="motivation-count"></textarea>
+                <div id="motivation-count" class="error-message">0 / 3000 caractères</div>
+
+                <button type="submit">Envoyer</button>
+            </fieldset>
+        </form>
+
+        <!-- Formulaire problème commande -->
+        <form id="commande-form" class="hidden">
+            <fieldset>
+                <legend>Un problème avec votre commande</legend>
+                <label for="commande">Numéro de commande</label>
+                <input type="text" id="commande" name="commande" maxlength="6" pattern="[0-9]{6}"
+                    aria-describedby="commande-error" />
+                <div id="commande-error" class="error-message hidden">Le numéro de commande doit comporter 6 chiffres.
+                </div>
+
+                <label for="probleme">Quel est votre problème ?</label>
+                <select id="probleme" name="probleme">
+                    <option value="">Veuillez sélectionner une option</option>
+                    <option value="service">Qualité du service</option>
+                    <option value="livraison">Qualité de livraison</option>
+                    <option value="autres">Autres</option>
+                </select>
+
+                <!-- Zone de texte supplémentaire pour "Autres" -->
+                <div id="autres-probleme" class="hidden">
+                    <label for="autre-detail">Détail du problème</label>
+                    <textarea id="autre-detail" name="autre-detail" rows="4" maxlength="1000"
+                        aria-describedby="autre-count"></textarea>
+                    <div id="autre-count" class="error-message">0 / 1000 caractères</div>
+                </div>
+
+                <button type="submit">Envoyer</button>
+            </fieldset>
+        </form>
+    </main>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

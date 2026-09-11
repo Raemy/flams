@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <meta name="googlebot" content="noindex">
+    <link href="style/style.css" rel="stylesheet">
+    <title>Flam's & co</title>
+    <link rel="icon" href="logo.ico" type="image/x-icon">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+            color: #000000;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .flame {
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="menu-nav" role="navigation" aria-label="Menu principal">
+        <div class="menu-nav-logo">
+            <img class="logo" alt="" src="/asset/file-5B45NWsGjPUUJRbqJHL7GcTE.png">
+        </div>
+        <div class="menu-nav-link">
+            <a href="#" class="nav-link" tabindex="0">Accueil</a>
+            <a href="/pages/page1/" class="nav-link" tabindex="0">Nos Flam's</a>
+            <a href="/pages/page3/" class="btn-full" tabindex="0" aria-label="Créer une tarte flambée">Créer sa Flam</a>
+            <a href="pages/page2/" class="nav-link" tabindex="0">Contact</a>
+        </div>
+    </header>
+    <main>
+        <section class="section1">
+            <div class="container">
+                <div>
+                    <img class="image1" src="/asset/img/bg.png" alt="">
+                </div>
+                <div class="section1-groupe1">
+                    <h1>Découvrez les meilleurs tartes Flambée d'Alsace</h1>
+                    <p>Commandez dès maintenant nos tartes flambée artisanales !</p>
+                    <a href="pages/page3/" class="btn-accueil">Créer votre Tarte Flambée!</a>
+                </div>
+            </div>
+        </section>
+        <section class="about-section">
+            <h2>Qui sommes-nous ?</h2>
+            <p>Nous créons des flammes d'exception pour apporter chaleur et lumière dans votre quotidien.
+                Nos flammes sont fabriquées avec soin, alliant design moderne et tradition.</p>
+        </section>
+
+        <!-- Features Section -->
+        <section class="about-section">
+            <h2>Nos avantages :</h2>
+            <ul style="list-style-type: none;" class="features">
+                <li class="feature">
+                    <lord-icon alt="" src="https://cdn.lordicon.com/fkyknwcx.json" trigger="loop"
+                        colors="primary:#2ca58d,secondary:#fae6d1,tertiary:#b26836" style="width:150px;height:150px">
+                    </lord-icon>
+                    <h3>Des Produits Locaux</h3>
+                    <p>Nos tartes flambées sont préparées à partir des meilleurs ingrédients locaux. Nous travaillons en
+                        étroite collaboration avec des producteurs de la région pour garantir des produits frais et de
+                        qualité, tout en soutenant l'économie locale.</p>
+                </li>
+                <li class="feature">
+                    <lord-icon alt="" src="https://cdn.lordicon.com/kgluitlg.json" trigger="loop" delay="2000"
+                        state="hover-bite" colors="primary:#fae6d1,secondary:#f4dc9c" style="width:150px;height:150px">
+                    </lord-icon>
+                    <h3>Faites avec Amours</h3>
+                    <p>Chaque tarte flambée est une création artisanale, préparée avec soin et passion par nos chefs.
+                        Nous
+                        prenons le temps de sélectionner les ingrédients les plus savoureux et de les assembler pour
+                        vous
+                        offrir une expérience culinaire unique</p>
+                </li>
+                <li class="feature">
+                    <lord-icon alt="" src="https://cdn.lordicon.com/ryfqrglk.json" trigger="loop" delay="2000"
+                        style="width:150px;height:150px">
+                    </lord-icon>
+                    <h3>Tradition et Savoir-faire</h3>
+                    <p>Nos recettes de tartes flambées sont inspirées de la tradition alsacienne, transmises de
+                        génération
+                        en génération. Chaque flammekueche est cuisinée dans le respect des méthodes authentiques, pour
+                        vous
+                        offrir un goût fidèle à la tradition.
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="section4">
+            <h2 class="title title-section">Les allergènes</h2>
+            <table>
+                <caption id="table-caption">Présence d'allergènes dans les différentes flammes</caption>
+                <thead>
+                    <tr>
+                        <th rowspan="2" scope="col" id="col-flame">Flamme</th>
+                        <th colspan="4" scope="colgroup">Allergènes</th>
+                    </tr>
+                    <tr>
+                        <th scope="col" id="col-noix">Présence de Noix</th>
+                        <th scope="col" id="col-gluten">Présence de Gluten</th>
+                        <th scope="col" id="col-lait">Présence de Lait</th>
+                        <th scope="col" id="col-oeufs">Présence d'Œufs</th>
+                    </tr>
+                </thead>
+                <tbody aria-describedby="table-caption">
+                    <tr>
+                        <th scope="row" id="flamme-classique" class="flame">Flamme Classique</th>
+                        <td headers="col-noix flamme-classique" aria-labelledby="col-noix">Oui</td>
+                        <td headers="col-gluten flamme-classique" aria-labelledby="col-gluten">Non</td>
+                        <td headers="col-lait flamme-classique" aria-labelledby="col-lait">Oui</td>
+                        <td headers="col-oeufs flamme-classique" aria-labelledby="col-oeufs">Non</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" id="forestiere" class="flame">Forestière</th>
+                        <td headers="col-noix forestiere" aria-labelledby="col-noix">Non</td>
+                        <td headers="col-gluten forestiere" aria-labelledby="col-gluten">Oui</td>
+                        <td headers="col-lait forestiere" aria-labelledby="col-lait">Oui</td>
+                        <td headers="col-oeufs forestiere" aria-labelledby="col-oeufs">Oui</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" id="flamme-gratinee" class="flame">Flamme Gratinée</th>
+                        <td headers="col-noix flamme-gratinee" aria-labelledby="col-noix">Non</td>
+                        <td headers="col-gluten flamme-gratinee" aria-labelledby="col-gluten">Non</td>
+                        <td headers="col-lait flamme-gratinee" aria-labelledby="col-lait">Oui</td>
+                        <td headers="col-oeufs flamme-gratinee" aria-labelledby="col-oeufs">Non</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" id="flamme-gratinee" class="flame">Flamme Munster</th>
+                        <td headers="col-noix flamme-gratinee" aria-labelledby="col-noix">Non</td>
+                        <td headers="col-gluten flamme-gratinee" aria-labelledby="col-gluten">Oui</td>
+                        <td headers="col-lait flamme-gratinee" aria-labelledby="col-lait">Oui</td>
+                        <td headers="col-oeufs flamme-gratinee" aria-labelledby="col-oeufs">Non</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" id="flamme-gratinee" class="flame">Flamme ail, persil</th>
+                        <td headers="col-noix flamme-gratinee" aria-labelledby="col-noix">Oui</td>
+                        <td headers="col-gluten flamme-gratinee" aria-labelledby="col-gluten">Oui</td>
+                        <td headers="col-lait flamme-gratinee" aria-labelledby="col-lait">Oui</td>
+                        <td headers="col-oeufs flamme-gratinee" aria-labelledby="col-oeufs">Non</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+        </section>
+
+        <section class="section3">
+            <h2 class="title title-section">UNE QUESTION ?</h2>
+            <a href="/pages/page2/" class="btn-full btn-section2">Contactez nous!</a>
+        </section>
+
+    </main>
+    <footer class="footer">
+        <div class="footer-block">
+            <ul class="footer-list-link">
+                <li><a class="footer-link" href="/pages/mention.html">Mentions Légales</a></li>
+                <li><a class="footer-link" href="/pages/confidentialite.html">Politique de confidentialité</a></li>
+                <li><a class="footer-link" href="/pages/accessibilite.html">Accessibilité : non conforme</a></li>
+                <li><a class="footer-link" href="/pages/plansite.html">Plan du site</a></li>
+            </ul>
+        </div>
+        <div class="footer-block">
+            <p class="footer-title"><i>Flam & co - 2026 - tout droit réservé</i></p>
+        </div>
+        <div class="footer-block">
+            <a class="footer-link" href="pages/page2/">Nous contacter</a>
+        </div>
+    </footer>
+
+    <script src="style/js/main.js"></script>
+</body>
+
+</html>

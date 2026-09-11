@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mega Menu Accessible</title>
+    <style>
+        /* Styles de base pour le menu */
+        .menu-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px;
+        }
+
+        .menu-nav-logo img {
+            width: 100px;
+        }
+
+        .menu-nav-link a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            font-size: 1.2em;
+        }
+
+        .menu-nav-link a:hover,
+        .menu-nav-link a:focus {
+            background-color: #555;
+            outline: none;
+        }
+
+        /* Mega menu styles */
+        .mega-menu {
+            position: absolute;
+            background-color: #f7f7f7;
+            display: none;
+            padding: 20px;
+            border: 1px solid #ccc;
+            width: 100%;
+        }
+
+        .menu-item:focus-within .mega-menu,
+        .menu-item:hover .mega-menu {
+            display: block;
+        }
+
+        .mega-menu a {
+            color: #333;
+            text-decoration: none;
+            display: block;
+            padding: 5px 0;
+        }
+
+        .mega-menu a:hover,
+        .mega-menu a:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header avec le menu -->
+    <header class="menu-nav" role="banner">
+        <div class="menu-nav-logo">
+            <img class="logo" alt="Logo de la société" src="/asset/file-5B45NWsGjPUUJRbqJHL7GcTE.png">
+        </div>
+        <nav class="menu-nav-link" role="navigation" aria-label="Menu principal">
+            <ul>
+                <!-- Lien Accueil -->
+                <li class="menu-item">
+                    <a href="../../" class="nav-link" tabindex="0">Accueil</a>
+                </li>
+
+                <!-- Lien Nos Flam's avec un mega menu accessible -->
+                <li class="menu-item" aria-haspopup="true" aria-expanded="false">
+                    <a href="/pages/ambre/" class="nav-link" id="mega-menu-link" aria-controls="mega-menu"
+                        tabindex="0">Nos Flam's</a>
+                    <div id="mega-menu" class="mega-menu" role="region" aria-labelledby="mega-menu-link">
+                        <h2 id="menu-title" class="sr-only">Sous-menu Nos Flam's</h2>
+                        <ul aria-labelledby="menu-title">
+                            <li><a href="/flams/traditionnelle" tabindex="0">Traditionnelle</a></li>
+                            <li><a href="/flams/fromage" tabindex="0">Au fromage</a></li>
+                            <li><a href="/flams/sucree" tabindex="0">Sucrée</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- Lien Créer -->
+                <li class="menu-item">
+                    <a href="/pages/theo/" class="btn-full" tabindex="0"
+                        aria-label="Créer votre tarte flambée personnalisée">Créer</a>
+                </li>
+
+                <!-- Lien Contact -->
+                <li class="menu-item">
+                    <a href="../rachelle/" class="nav-link" tabindex="0">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <script>
+        // Gérer l'accessibilité du méga-menu pour le clavier et les lecteurs d'écran
+        document.querySelectorAll('.menu-item').forEach(item => {
+            const link = item.querySelector('a');
+            const menu = item.querySelector('.mega-menu');
+
+            // Ouvrir le menu au clavier (Tab)
+            link.addEventListener('focus', () => {
+                item.classList.add('open');
+                if (menu) {
+                    menu.setAttribute('aria-expanded', 'true');
+                    link.setAttribute('aria-expanded', 'true');
+                }
+            });
+
+            // Fermer le menu lorsque le focus sort
+            item.addEventListener('focusout', () => {
+                item.classList.remove('open');
+                if (menu) {
+                    menu.setAttribute('aria-expanded', 'false');
+                    link.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
